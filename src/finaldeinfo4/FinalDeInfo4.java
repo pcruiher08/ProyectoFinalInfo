@@ -35,7 +35,7 @@ public class FinalDeInfo4 {
     }
     
     public void agregaUnaLista(){
-    Inventario.add(ListaNueva());
+    Inventario.add(ListaNueva()); //checar el error en esta linea
     }
     
    public <T> List<T> ListaNueva(Class<T>klazz){
