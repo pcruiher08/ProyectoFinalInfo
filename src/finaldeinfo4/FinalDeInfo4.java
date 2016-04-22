@@ -24,9 +24,9 @@ public class FinalDeInfo4 {
         Inventario.add("Cosa1");
         Inventario.add("Cosa2");
         Inventario.add("Cosa3");
-        Inventario.add("Cosa3.1");
-        Inventario.add("Cosa3.2");
         Inventario.add("Cosa4");
+        Inventario.add("Cosa5");
+        Inventario.add("Cosa6");
         Inventario.remove(Inventario.indexOf("Cosa2"));
         for(int i=0; i<Inventario.size(); i++)
         System.out.println(Inventario.get(i));
