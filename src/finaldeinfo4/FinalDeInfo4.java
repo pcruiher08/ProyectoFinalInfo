@@ -34,4 +34,13 @@ public class FinalDeInfo4 {
         
     }
     
+    public void agregaUnaLista(){
+    Inventario.add(ListaNueva());
+    }
+    
+   public <T> List<T> ListaNueva(Class<T>klazz){
+   List<T> list = new ArrayList<>();
+   return list;
+   }
+    
 }
