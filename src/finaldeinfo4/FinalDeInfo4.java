@@ -35,12 +35,22 @@ public class FinalDeInfo4 {
     }
     
     public void agregaUnaLista(){
-    Inventario.add(ListaNueva()); //checar el error en esta linea
+    Inventario.add(ListaNueva("o")); //checar el error en esta linea
     }
     
-   public <T> List<T> ListaNueva(Class<T>klazz){
-   List<T> list = new ArrayList<>();
-   return list;
+   public <T> List<T> ListaNueva(Class<T>klazz, String tomatos){
+   List<T> tomatos = new ArrayList<>();
+   return tomatos;
+   
+   /* Estructura de datos en C++
+   
+   [
+           ["tomatos", a, b, c, d],
+           ["peppers", a, b, c, d]
+   ]
+
+    */
+   
    }
     
 }
