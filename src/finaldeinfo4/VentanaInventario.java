@@ -282,9 +282,9 @@ Inventario Pablo = new Inventario();
         // TODO add your handling code here:
         int articulos = (int) jSpinner1.getValue();
         int p=1;
-        Pablo.addItem(jTextField1.getText(),articulos);
-        Pablo.showContents();
-       jTextArea1.setText(Pablo.contenidos());
+//        Pablo.addItem(jTextField1.getText(),articulos);
+//        Pablo.showContents();
+     //  jTextArea1.setText(Pablo.contenidos());
       //textField1.getText();
       String x = jTextField1.getText();
       //jComboBox2.isShowing("");
@@ -393,7 +393,7 @@ Inventario Pablo = new Inventario();
         if(restacion <=0){
         restacion =0;
        String texto=  jTextArea1.getText();
-           jTextArea1.setText(texto + "\n"+ "No tienes suficientes " + letter );//+ " ve y compra mas, "+ letter+ " fue retirado del inventario" );
+           jTextArea1.setText(texto + "Compra mas " + letter );//+ " ve y compra mas, "+ letter+ " fue retirado del inventario" );
           
         }
         else if(restacion >0){
