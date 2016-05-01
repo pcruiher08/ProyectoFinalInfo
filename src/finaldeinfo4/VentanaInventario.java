@@ -93,6 +93,11 @@ Inventario Pablo = new Inventario();
         });
 
         jButton3.setText("Eliminar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
 
@@ -217,8 +222,8 @@ Inventario Pablo = new Inventario();
       
       
       if(p==1){
-          jComboBox2.addItem(jTextField1.getText() + " "+ "["+jSpinner1.getValue()+"]");
-          jComboBox1.addItem(jTextField1.getText() + " "+ "["+jSpinner1.getValue()+"]");
+          jComboBox2.addItem(jTextField1.getText() + " "+jSpinner1.getValue());
+          jComboBox1.addItem(jTextField1.getText() + " "+jSpinner1.getValue());
          
       } 
       
@@ -240,18 +245,7 @@ Inventario Pablo = new Inventario();
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
-        int p=0;
-        int l;
-        String x  = (String) jComboBox2.getSelectedItem();
-        for(int k=0; k<jComboBox2.getItemCount(); k++){
-           
-      if(jComboBox2.getItemAt(k).contains(x)){
-      p=1;
-      jComboBox2.removeItemAt(k);
-      break;
-      }
-      }
-        jComboBox2.addItem(x);
+        
     
         //k=i;
         
@@ -275,8 +269,73 @@ Inventario Pablo = new Inventario();
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
       // jComboBox2. jSpinner1+jSpinner2;
+      int p=0;
+        int l;
+        String a  = (String) jComboBox2.getSelectedItem();
+        for(int k=0; k<jComboBox2.getItemCount(); k++){
+           
+      if(jComboBox2.getItemAt(k).contains(a)){
+      p=1;
+      jComboBox2.removeItemAt(k);
+      jComboBox1.removeItemAt(k);
+      break;
+      }
+      }
+        String number = "";
+              String letter = "";
+              for (int i = 0; i < a.length(); i++) {
+                     char b = a.charAt(i);
+                     if (Character.isDigit(b)) {
+                           number = number + b;
+
+                     } else {
+                           letter = letter + b;
+
+                     }
+              }
+//              System.out.println("Alphates in string:"+letter);
+//              System.out.println("Numbers in String:"+number); 
+        int agregacion = (Integer.parseInt(number) + (int)jSpinner2.getNextValue()-1);
+
+
+        jComboBox2.addItem(letter +  " " + agregacion);
+        jComboBox1.addItem(letter +  " " + agregacion);
       
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+         int p=0;
+        int l;
+        String a  = (String) jComboBox1.getSelectedItem();
+        for(int k=0; k<jComboBox1.getItemCount(); k++){
+           
+      if(jComboBox1.getItemAt(k).contains(a)){
+      p=1;
+      jComboBox1.removeItemAt(k);
+      jComboBox2.removeItemAt(k);
+      break;
+      }
+      }
+        String number = "";
+              String letter = "";
+              for (int i = 0; i < a.length(); i++) {
+                     char b = a.charAt(i);
+                     if (Character.isDigit(b)) {
+                           number = number + b;
+
+                     } else {
+                           letter = letter + b;
+
+                     }
+              }
+//              System.out.println("Alphates in string:"+letter);
+//              System.out.println("Numbers in String:"+number); 
+        int restacion = (Integer.parseInt(number) - (int)jSpinner3.getValue());
+
+        jComboBox2.addItem(letter +  " " + restacion);
+        jComboBox1.addItem(letter +  " " + restacion);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
