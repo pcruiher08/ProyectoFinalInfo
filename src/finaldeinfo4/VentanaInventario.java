@@ -86,10 +86,19 @@ Inventario Pablo = new Inventario();
         });
 
         jButton2.setText("Agregar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Eliminar");
 
         jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
+
+        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
+
+        jSpinner3.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
 
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,7 +150,7 @@ Inventario Pablo = new Inventario();
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jSpinner2, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                                    .addComponent(jSpinner2)
                                     .addComponent(jSpinner3))
                                 .addGap(42, 42, 42)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,27 +203,25 @@ Inventario Pablo = new Inventario();
         int articulos = (int) jSpinner1.getValue();
         int p=1;
         Pablo.addItem(jTextField1.getText(),articulos);
-      Pablo.showContents();
+        Pablo.showContents();
       textField1.setText(Pablo.contenidos());
       String x = jTextField1.getText();
       //jComboBox2.isShowing("");
      
       for(int i=0; i<jComboBox2.getItemCount(); i++){
-      if(jComboBox2.getItemAt(i).equals(x)){
+      if(jComboBox2.getItemAt(i).contains(x)){
       p=0;
       }
-      //p=1;
+      
       }
       
       
       if(p==1){
-          jComboBox2.addItem(jTextField1.getText());
-          jComboBox1.addItem(jTextField1.getText());
+          jComboBox2.addItem(jTextField1.getText() + " "+ "["+jSpinner1.getValue()+"]");
+          jComboBox1.addItem(jTextField1.getText() + " "+ "["+jSpinner1.getValue()+"]");
          
       } 
-      else if(p==0){
       
-      }
        // textField1.setText(Pablo.showContents());
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -233,6 +240,23 @@ Inventario Pablo = new Inventario();
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
+        int p=0;
+        int l;
+        String x  = (String) jComboBox2.getSelectedItem();
+        for(int k=0; k<jComboBox2.getItemCount(); k++){
+           
+      if(jComboBox2.getItemAt(k).contains(x)){
+      p=1;
+      jComboBox2.removeItemAt(k);
+      break;
+      }
+      }
+        jComboBox2.addItem(x);
+    
+        //k=i;
+        
+       
+        
         //-----------------------------------jComboBox2.addItem(jTextField1.getText());
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
@@ -247,6 +271,12 @@ Inventario Pablo = new Inventario();
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+      // jComboBox2. jSpinner1+jSpinner2;
+      
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
