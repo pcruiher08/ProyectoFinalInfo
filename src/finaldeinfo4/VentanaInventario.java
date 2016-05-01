@@ -281,6 +281,7 @@ Inventario Pablo = new Inventario();
       break;
       }
       }
+         a = a.replaceAll("\\s","");
         String number = "";
               String letter = "";
               for (int i = 0; i < a.length(); i++) {
@@ -317,6 +318,7 @@ Inventario Pablo = new Inventario();
       break;
       }
       }
+        a = a.replaceAll("\\s","");
         String number = "";
               String letter = "";
               for (int i = 0; i < a.length(); i++) {
@@ -329,12 +331,19 @@ Inventario Pablo = new Inventario();
 
                      }
               }
-//              System.out.println("Alphates in string:"+letter);
-//              System.out.println("Numbers in String:"+number); 
+//             
+
         int restacion = (Integer.parseInt(number) - (int)jSpinner3.getValue());
 
+        if(restacion <=0){
+        restacion =0;
+          textField1.setText("No tienes suficientes " + letter + " ve y compra mas ,"+ letter+ " fue retirado del inventario" );
+          
+        }
+        else{
         jComboBox2.addItem(letter +  " " + restacion);
         jComboBox1.addItem(letter +  " " + restacion);
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
