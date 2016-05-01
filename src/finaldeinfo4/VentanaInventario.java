@@ -285,7 +285,7 @@ Inventario Pablo = new Inventario();
         Pablo.addItem(jTextField1.getText(),articulos);
         Pablo.showContents();
        jTextArea1.setText(Pablo.contenidos());
-      textField1.getText();
+      //textField1.getText();
       String x = jTextField1.getText();
       //jComboBox2.isShowing("");
      
@@ -385,10 +385,11 @@ Inventario Pablo = new Inventario();
           
 
         int restacion = (Integer.parseInt(number) - (int)jSpinner3.getValue());
-        
-        if(jRadioButton1.isEnabled()==true){
+//        
+        if(jRadioButton1.isSelected()){
         restacion =0;
         }
+
         if(restacion <=0){
         restacion =0;
        String texto=  jTextArea1.getText();
