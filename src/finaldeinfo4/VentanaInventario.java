@@ -5,12 +5,22 @@
  */
 package finaldeinfo4;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+
 /**
  *
  * @author Pablo
  */
 public class VentanaInventario extends javax.swing.JFrame {
 Inventario Pablo = new Inventario();
+ArrayList<String> contents = new ArrayList<>();
     /**
      * Creates new form VentanaInventario
      */
@@ -42,6 +52,7 @@ Inventario Pablo = new Inventario();
         jFrame2 = new javax.swing.JFrame();
         jFrame3 = new javax.swing.JFrame();
         button1 = new java.awt.Button();
+        jButton7 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -56,6 +67,7 @@ Inventario Pablo = new Inventario();
         jButton6 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jButton8 = new javax.swing.JButton();
 
         jInternalFrame1.setVisible(true);
 
@@ -133,6 +145,8 @@ Inventario Pablo = new Inventario();
 
         button1.setLabel("button1");
 
+        jButton7.setText("jButton7");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("Agregar Articulo");
@@ -206,6 +220,13 @@ Inventario Pablo = new Inventario();
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        jButton8.setText("Lista del super");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -216,7 +237,7 @@ Inventario Pablo = new Inventario();
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(23, 23, 23)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -240,7 +261,10 @@ Inventario Pablo = new Inventario();
                                     .addGap(6, 6, 6)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jRadioButton1)
-                                        .addComponent(jButton4)))))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jButton4)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton8))))))
                         .addGroup(layout.createSequentialGroup()
                             .addContainerGap()
                             .addComponent(jButton6))))
@@ -269,7 +293,9 @@ Inventario Pablo = new Inventario();
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton1)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton4)
+                    .addComponent(jButton8))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(18, Short.MAX_VALUE))
@@ -323,6 +349,7 @@ Inventario Pablo = new Inventario();
     
         jComboBox1.removeAllItems();
         jComboBox2.removeAllItems();
+        contents.clear();
     }//GEN-LAST:event_jButton4ActionPerformed
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
     }//GEN-LAST:event_jComboBox1ActionPerformed
@@ -385,7 +412,7 @@ Inventario Pablo = new Inventario();
           
 
         int restacion = (Integer.parseInt(number) - (int)jSpinner3.getValue());
-//        
+      
         if(jRadioButton1.isSelected()){
         restacion =0;
         }
@@ -393,7 +420,11 @@ Inventario Pablo = new Inventario();
         if(restacion <=0){
         restacion =0;
        String texto=  jTextArea1.getText();
-           jTextArea1.setText(texto + "Compra mas " + letter );//+ " ve y compra mas, "+ letter+ " fue retirado del inventario" );
+       contents.add(letter);
+       if(texto.contains("El inventario está vacio!"))
+           texto ="";
+       
+           jTextArea1.setText(texto + "Compra mas " + letter +"\n");//+ " ve y compra mas, "+ letter+ " fue retirado del inventario" );
           
         }
         else if(restacion >0){
@@ -411,15 +442,55 @@ Inventario Pablo = new Inventario();
         System.exit(0);
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        for (int i=0; i<contents.size(); i++){
+        System.out.println(contents.get(i));
+        }
+
+        String file = ("/Users/Pablo/listadelsuper.txt");
+        
+        PrintWriter writer = null;
+        try{
+
+                writer = new PrintWriter(file);
+        
+        }catch (FileNotFoundException e){
+        e.printStackTrace();
+        }   
+        for(int i=0; i<contents.size(); i++){
+            
+        writer.println(contents.get(i));
+            writer.println();
+            
+            
+            }
+         
+        writer.close();
+        
+        if (Desktop.isDesktopSupported()) {
+    try {
+        File myFile = new File("/Users/Pablo/listadelsuper.txt");
+     
+        Desktop.getDesktop().open(myFile);
+       
+  
+         
+        
+    } catch (IOException ex) {
+        
+    }
+}
+    
+     
+        
+    }//GEN-LAST:event_jButton8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -455,6 +526,8 @@ Inventario Pablo = new Inventario();
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JDesktopPane jDesktopPane1;
