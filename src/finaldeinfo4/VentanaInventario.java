@@ -24,8 +24,6 @@ import java.util.ArrayList;
 public class VentanaInventario extends javax.swing.JFrame {
 
 ArrayList<String> contents = new ArrayList<>();
-//int mes=(int) jSpinner7.getValue();
-//int dia=(int) jSpinner6.getValue)();
 
     /**
      * Creates new form VentanaInventario
@@ -37,8 +35,7 @@ ArrayList<String> contents = new ArrayList<>();
         
         initComponents();
     }
-int mes;
-int dia;
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -267,63 +264,64 @@ int dia;
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(23, 23, 23)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(6, 6, 6)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(jLabel2)
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addComponent(jSpinner5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addComponent(jSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addGap(112, 112, 112)
-                                            .addComponent(jSpinner7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jSpinner6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(18, 18, 18)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(jSpinner2)
-                                                        .addComponent(jSpinner3))
-                                                    .addGap(42, 42, 42)
-                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGap(42, 42, 42)
-                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jLabel3))))))
-                                    .addGap(16, 16, 16))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(6, 6, 6)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jRadioButton1)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jButton4)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jButton8))))))
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jButton6)
-                            .addGap(18, 18, 18)
-                            .addComponent(jLabel1))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel2)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jSpinner5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGap(112, 112, 112)
+                                        .addComponent(jSpinner7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jSpinner6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(jSpinner2)
+                                                    .addComponent(jSpinner3))
+                                                .addGap(42, 42, 42)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(42, 42, 42)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel3))))))
+                                .addGap(16, 16, 16))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jRadioButton1)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jButton4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButton8))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton6)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -378,53 +376,34 @@ int dia;
 
         int articulos = (int) jSpinner1.getValue();
         int p=1;
+       
         try{
-
-      String x = jTextField1.getText();
+            
+        String x = jTextField1.getText();
       
 int k = checaFecha((int) jSpinner5.getValue(),(int) jSpinner4.getValue());
-//fechas.addItem(x,k);
 
-// if(this.mes>mes&&this.dia>dia)
-//    a= 1;//bueno
-//    
-//    else if(this.mes<mes)
-//    a= 2;//caduco
-//     
-//    
-//    else if(this.mes==mes&&this.dia<dia)
-//    a= 3;//caduco
-//    
-//    else if(this.mes==mes&&this.dia-dia>7)
-//    a=4;//bueno
-//    
-//    else if(this.mes==mes&&this.dia-dia<7) //caduca esta semana
-//    a=5;//bueno
       for(int i=0; i<jComboBox2.getItemCount(); i++){
-      if(jComboBox2.getItemAt(i).contains(x)){
-      p=0;
-      }
-      
-      }
-      if(p==1&&k==5)
-      jTextArea1.setText(jTextField1.getText()+" caducan esta semana");
-       if(p==1&&k==4)
-       jTextArea1.setText(jTextField1.getText()+" estan en buen estado");
-       if(p==1&&k==3)
-       jTextArea1.setText(jTextField1.getText()+" caduc@s");
-       if(p==1&&k==2)
-       jTextArea1.setText(jTextField1.getText()+" caduc@s");
-       if(p==1&&k==1)
-       jTextArea1.setText(jTextField1.getText()+" caduc@s");
+            if(jComboBox2.getItemAt(i).contains(x)){
+            p=0;
+            }
+        }
+            if(p==1&&k==5)
+            jTextArea1.setText(jTextField1.getText()+" caducan esta semana");
+             if(p==1&&k==4)
+             jTextArea1.setText(jTextField1.getText()+" estan en buen estado");
+             if(p==1&&k==3)
+             jTextArea1.setText(jTextField1.getText()+" caduc@s");
+             if(p==1&&k==2)
+             jTextArea1.setText(jTextField1.getText()+" caduc@s");
+             if(p==1&&k==1)
+             jTextArea1.setText(jTextField1.getText()+" caduc@s");
        
-      if(p==1&&(int)jSpinner1.getValue()!=0){
-          jComboBox2.addItem(jTextField1.getText() + " "+jSpinner1.getValue());
-          jComboBox1.addItem(jTextField1.getText() + " "+jSpinner1.getValue());
-         
-      } 
-      } catch (Exception e) {
-        
-    }
+        if(p==1&&(int)jSpinner1.getValue()!=0){
+            jComboBox2.addItem(jTextField1.getText() + " "+jSpinner1.getValue());
+            jComboBox1.addItem(jTextField1.getText() + " "+jSpinner1.getValue());
+                    } 
+            } catch (Exception e) {}
       
        
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -437,15 +416,13 @@ int k = checaFecha((int) jSpinner5.getValue(),(int) jSpinner4.getValue());
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       try {
-         jTextArea1.setText("El inventario está vacio!");
-    
-        jComboBox1.removeAllItems();
-        jComboBox2.removeAllItems();
-        contents.clear();
-        } catch (Exception e) {
-        
-    }
+        try {
+                jTextArea1.setText("El inventario está vacio!");
+                jComboBox1.removeAllItems();
+                jComboBox2.removeAllItems();
+                contents.clear();
+        } catch (Exception e) {}
+       
     }//GEN-LAST:event_jButton4ActionPerformed
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
     }//GEN-LAST:event_jComboBox1ActionPerformed
@@ -453,34 +430,32 @@ int k = checaFecha((int) jSpinner5.getValue(),(int) jSpinner4.getValue());
       int p=0;
         int l;
         try{
-        String a  = (String) jComboBox2.getSelectedItem();
-        for(int k=0; k<jComboBox2.getItemCount(); k++){           
-      if(jComboBox2.getItemAt(k).contains(a)){
-      p=1;
-      jComboBox2.removeItemAt(k);
-      jComboBox1.removeItemAt(k);
-      break;
-      }
-      }
-         a = a.replaceAll("\\s","");
-        String number = "";
-              String letter = "";
-              for (int i = 0; i < a.length(); i++) {
-                     char b = a.charAt(i);
-                     if (Character.isDigit(b)) {
-                           number = number + b;
-                     } else {
-                           letter = letter + b;
-                     }
-              }
-        int agregacion = (Integer.parseInt(number) + (int)jSpinner2.getNextValue()-1);
+            String a  = (String) jComboBox2.getSelectedItem();
+            for(int k=0; k<jComboBox2.getItemCount(); k++){           
+          if(jComboBox2.getItemAt(k).contains(a)){
+          p=1;
+          jComboBox2.removeItemAt(k);
+          jComboBox1.removeItemAt(k);
+          break;
+          }
+          }
+             a = a.replaceAll("\\s","");
+            String number = "";
+                  String letter = "";
+                  for (int i = 0; i < a.length(); i++) {
+                         char b = a.charAt(i);
+                         if (Character.isDigit(b)) {
+                               number = number + b;
+                         } else {
+                               letter = letter + b;
+                         }
+                  }
+            int agregacion = (Integer.parseInt(number) + (int)jSpinner2.getNextValue()-1);
 
 
-        jComboBox2.addItem(letter +  " " + agregacion);
-        jComboBox1.addItem(letter +  " " + agregacion);    
-        } catch (Exception e) {
-        
-    }
+            jComboBox2.addItem(letter +  " " + agregacion);
+            jComboBox1.addItem(letter +  " " + agregacion);    
+        } catch (Exception e) {}
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -488,60 +463,52 @@ int k = checaFecha((int) jSpinner5.getValue(),(int) jSpinner4.getValue());
         int p=0;
         int l;
         try {
-        String a  = (String) jComboBox1.getSelectedItem();
-        for(int k=0; k<jComboBox1.getItemCount(); k++){
-           
-      if(jComboBox1.getItemAt(k).contains(a)){
-      p=1;
-      jComboBox1.removeItemAt(k);
-      jComboBox2.removeItemAt(k);
-      break;
-      }
-      }
-        a = a.replaceAll("\\s","");
-        String number = "";
-              String letter = "";
-              for (int i = 0; i < a.length(); i++) {
-                     char b = a.charAt(i);
-                     if (Character.isDigit(b)) {
-                           number = number + b;
+                String a  = (String) jComboBox1.getSelectedItem();
+                for(int k=0; k<jComboBox1.getItemCount(); k++){
 
-                     } else {
-                           letter = letter + b;
-
-                     }
+              if(jComboBox1.getItemAt(k).contains(a)){
+              p=1;
+              jComboBox1.removeItemAt(k);
+              jComboBox2.removeItemAt(k);
+              break;
               }
-          
+              }
+                a = a.replaceAll("\\s","");
+                String number = "";
+                      String letter = "";
+                      for (int i = 0; i < a.length(); i++) {
+                             char b = a.charAt(i);
+                             if (Character.isDigit(b)) {
+                                   number = number + b;
 
-        int restacion = (Integer.parseInt(number) - (int)jSpinner3.getValue());
-      
-        if(jRadioButton1.isSelected()){
-        restacion =0;
-        }
+                             } else {
+                                   letter = letter + b;
 
-        if(restacion <=0){
-        restacion =0;
-       String texto=  jTextArea1.getText();
-       contents.add(letter);
-       if(texto.contains("El inventario está vacio!"))
-           texto ="";
-       
-           jTextArea1.setText(texto + "Compra mas " + letter +"\n");//+ " ve y compra mas, "+ letter+ " fue retirado del inventario" );
-         
-        }
-        else if(restacion >0){
-        jComboBox2.addItem(letter +  " " + restacion);
-        jComboBox1.addItem(letter +  " " + restacion);
-        }
-        
-        
-       
-  
-         
-        
-    } catch (Exception e) {
-        
-    }
+                             }
+                      }
+
+
+                int restacion = (Integer.parseInt(number) - (int)jSpinner3.getValue());
+
+                if(jRadioButton1.isSelected()){
+                restacion =0;
+                }
+
+                if(restacion <=0){
+                restacion =0;
+               String texto=  jTextArea1.getText();
+               contents.add(letter);
+               if(texto.contains("El inventario está vacio!"))
+                   texto ="";
+
+                   jTextArea1.setText(texto + "Compra mas " + letter +"\n");//+ " ve y compra mas, "+ letter+ " fue retirado del inventario" );
+
+                }
+                else if(restacion >0){
+                jComboBox2.addItem(letter +  " " + restacion);
+                jComboBox1.addItem(letter +  " " + restacion);
+                } 
+        } catch (Exception e) {}
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -619,11 +586,7 @@ int k = checaFecha((int) jSpinner5.getValue(),(int) jSpinner4.getValue());
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(VentanaInventario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-    //</editor-fold>
-    
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
             new VentanaInventario().setVisible(true);
         });
