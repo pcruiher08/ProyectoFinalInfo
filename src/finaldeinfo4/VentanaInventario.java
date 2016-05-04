@@ -7,11 +7,14 @@ package finaldeinfo4;
 
 import java.awt.Desktop;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import sun.audio.*;
+
+        import java.io.InputStream;
 
 
 /**
@@ -53,6 +56,7 @@ ArrayList<String> contents = new ArrayList<>();
         jFrame3 = new javax.swing.JFrame();
         button1 = new java.awt.Button();
         jButton7 = new javax.swing.JButton();
+        jProgressBar1 = new javax.swing.JProgressBar();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -68,6 +72,7 @@ ArrayList<String> contents = new ArrayList<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton8 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         jInternalFrame1.setVisible(true);
 
@@ -148,6 +153,7 @@ ArrayList<String> contents = new ArrayList<>();
         jButton7.setText("jButton7");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 102, 0));
 
         jButton1.setText("Agregar Articulo");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -227,6 +233,9 @@ ArrayList<String> contents = new ArrayList<>();
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel1.setText("Inventario de la Alacena");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -267,14 +276,20 @@ ArrayList<String> contents = new ArrayList<>();
                                             .addComponent(jButton8))))))
                         .addGroup(layout.createSequentialGroup()
                             .addContainerGap()
-                            .addComponent(jButton6))))
+                            .addComponent(jButton6)
+                            .addGap(18, 18, 18)
+                            .addComponent(jLabel1))))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -298,7 +313,7 @@ ArrayList<String> contents = new ArrayList<>();
                     .addComponent(jButton8))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
 
         pack();
@@ -308,6 +323,7 @@ ArrayList<String> contents = new ArrayList<>();
         // TODO add your handling code here:
         int articulos = (int) jSpinner1.getValue();
         int p=1;
+        try{
 //        Pablo.addItem(jTextField1.getText(),articulos);
 //        Pablo.showContents();
      //  jTextArea1.setText(Pablo.contenidos());
@@ -328,6 +344,9 @@ ArrayList<String> contents = new ArrayList<>();
           jComboBox1.addItem(jTextField1.getText() + " "+jSpinner1.getValue());
          
       } 
+      } catch (Exception e) {
+        
+    }
       
        // textField1.setText(Pablo.showContents());
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -344,18 +363,22 @@ ArrayList<String> contents = new ArrayList<>();
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        Pablo.spillContents();
+       try {
          jTextArea1.setText("El inventario está vacio!");
     
         jComboBox1.removeAllItems();
         jComboBox2.removeAllItems();
         contents.clear();
+        } catch (Exception e) {
+        
+    }
     }//GEN-LAST:event_jButton4ActionPerformed
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
     }//GEN-LAST:event_jComboBox1ActionPerformed
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
       int p=0;
         int l;
+        try{
         String a  = (String) jComboBox2.getSelectedItem();
         for(int k=0; k<jComboBox2.getItemCount(); k++){           
       if(jComboBox2.getItemAt(k).contains(a)){
@@ -381,11 +404,16 @@ ArrayList<String> contents = new ArrayList<>();
 
         jComboBox2.addItem(letter +  " " + agregacion);
         jComboBox1.addItem(letter +  " " + agregacion);    
+        } catch (Exception e) {
+        
+    }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-         int p=0;
+        
+        int p=0;
         int l;
+        try {
         String a  = (String) jComboBox1.getSelectedItem();
         for(int k=0; k<jComboBox1.getItemCount(); k++){
            
@@ -425,12 +453,24 @@ ArrayList<String> contents = new ArrayList<>();
            texto ="";
        
            jTextArea1.setText(texto + "Compra mas " + letter +"\n");//+ " ve y compra mas, "+ letter+ " fue retirado del inventario" );
-          
+//          String sonido = "/Users/Pablo/Desktop/44368^ALARME.mp3";
+//          InputStream in = new FileInputStream(sonido);
+//          AudioStream audio = new AudioStream(in);
+//          AudioPlayer.player.start(audio);
         }
         else if(restacion >0){
         jComboBox2.addItem(letter +  " " + restacion);
         jComboBox1.addItem(letter +  " " + restacion);
         }
+        
+        
+       
+  
+         
+        
+    } catch (Exception e) {
+        
+    }
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -444,6 +484,7 @@ ArrayList<String> contents = new ArrayList<>();
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
+        try{
         for (int i=0; i<contents.size(); i++){
         System.out.println(contents.get(i));
         }
@@ -480,7 +521,12 @@ ArrayList<String> contents = new ArrayList<>();
     } catch (IOException ex) {
         
     }
+   
 }
+      
+        } catch (Exception e) {
+        
+    }
     
      
         
@@ -498,22 +544,16 @@ ArrayList<String> contents = new ArrayList<>();
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaInventario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaInventario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaInventario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(VentanaInventario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+    //</editor-fold>
+    
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VentanaInventario().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new VentanaInventario().setVisible(true);
         });
     }
 
@@ -536,9 +576,11 @@ ArrayList<String> contents = new ArrayList<>();
     private javax.swing.JFrame jFrame2;
     private javax.swing.JFrame jFrame3;
     private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
+    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
