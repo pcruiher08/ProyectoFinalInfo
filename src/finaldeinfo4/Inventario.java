@@ -12,31 +12,34 @@ import java.util.List;
 public class Inventario {
        //  public static List<List<String>> listOfList;
   public List<List<String>> contents = new ArrayList<>();
+ 
+   // public ArrayList<String> contents = new ArrayList<>();
 	//public ArrayList<String> contents = new ArrayList<String>();
+    
 	
-	public void Inventario() {
+	public Inventario() {
+            
 	}
 	
 
-	public void addItem(String item, int n) {
-                contents.add(new ArrayList<>());
-                
-                //for (int i=0; i<=n; i++)
-		contents.get(contents.size()-1).add(Integer.toString(n));
-		//int x = Integer.parseInt("2");
-	}
+	public void addElemento(String item, int n) {
+              contents.add(new ArrayList<>());
+              contents.get(contents.size()-1).add(item);
+        }
+              
+              
 	
 	
-	public List<String> getLastItem() {
+	public List<String> getUltimoElemento() {
 		if ( contents.size() > 0 ) {
 			return contents.get(contents.size()-1);
 		} else {
 			return null;
 		}
-	}
+        }
 	
 	
-	public List<String> getFirstItem() {
+	public List<String> getPrimerElemento() {
 		if ( contents.size() > 0 ) {
 			return contents.get(0);
 		} else {
@@ -55,7 +58,7 @@ public class Inventario {
          }
 	
 	
-	 public void spillContents() {
+	 public void tiraContenido() {
 		System.out.println("\nretirando los elementos del inventario:");
 		for(List<String> item : contents) {
 			System.out.println(item);
@@ -63,7 +66,7 @@ public class Inventario {
 		contents.clear();
 		System.out.println("El inventario está vacio!\n");
 	}
-          public void showContents() {
+          public void muestraContenido() {
 		System.out.println("\nestos son los elementos:");
 		for(List<String> item : contents) {
 			System.out.println(item);

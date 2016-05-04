@@ -381,26 +381,28 @@ ArrayList<String> contents = new ArrayList<>();
             
         String x = jTextField1.getText();
       
-int k = checaFecha((int) jSpinner5.getValue(),(int) jSpinner4.getValue());
+int k = checaFecha((int) jSpinner5.getValue(),(int) jSpinner4.getValue()); // regresa el valor que indica la caducidad
 
       for(int i=0; i<jComboBox2.getItemCount(); i++){
             if(jComboBox2.getItemAt(i).contains(x)){
-            p=0;
+            p=0; // flag para confirmar existencia de articulo en la lista
             }
         }
+             if(p==1&&k==6)
+             jTextArea1.setText(jTextField1.getText()+" cadus@s"+"\n");   
             if(p==1&&k==5)
-            jTextArea1.setText(jTextField1.getText()+" caducan esta semana");
-             if(p==1&&k==4)
-             jTextArea1.setText(jTextField1.getText()+" estan en buen estado");
-             if(p==1&&k==3)
-             jTextArea1.setText(jTextField1.getText()+" caduc@s");
-             if(p==1&&k==2)
-             jTextArea1.setText(jTextField1.getText()+" caduc@s");
-             if(p==1&&k==1)
-             jTextArea1.setText(jTextField1.getText()+" caduc@s");
+            jTextArea1.setText(jTextField1.getText()+" estan en buen estado"+"\n"); // se separan en casos posibles de caducidad, entonces se imprime la caducidad
+            else if(p==1&&k==4)
+             jTextArea1.setText(jTextField1.getText()+" caducan esta semana"+"\n");
+            else if(p==1&&k==3)
+             jTextArea1.setText(jTextField1.getText()+" estan en buen estado"+"\n");
+            else if(p==1&&k==2)
+             jTextArea1.setText(jTextField1.getText()+" caduc@s"+"\n");
+            else if(p==1&&k==1)
+             jTextArea1.setText(jTextField1.getText()+" estan en buen estado"+"\n");
        
         if(p==1&&(int)jSpinner1.getValue()!=0){
-            jComboBox2.addItem(jTextField1.getText() + " "+jSpinner1.getValue());
+            jComboBox2.addItem(jTextField1.getText() + " "+jSpinner1.getValue()); //se addhiere el elemento si la flag lo indica
             jComboBox1.addItem(jTextField1.getText() + " "+jSpinner1.getValue());
                     } 
             } catch (Exception e) {}
@@ -417,10 +419,10 @@ int k = checaFecha((int) jSpinner5.getValue(),(int) jSpinner4.getValue());
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         try {
-                jTextArea1.setText("El inventario está vacio!");
-                jComboBox1.removeAllItems();
+                jTextArea1.setText("El inventario está vacio!"); 
+                jComboBox1.removeAllItems(); // quita los elementos de las listas 
                 jComboBox2.removeAllItems();
-                contents.clear();
+                
         } catch (Exception e) {}
        
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -430,7 +432,7 @@ int k = checaFecha((int) jSpinner5.getValue(),(int) jSpinner4.getValue());
       int p=0;
         int l;
         try{
-            String a  = (String) jComboBox2.getSelectedItem();
+            String a  = (String) jComboBox2.getSelectedItem(); // para renovar la cantidad de articulos hay que quitar el articulo y enseguida ponerlo con la nueva cantidad
             for(int k=0; k<jComboBox2.getItemCount(); k++){           
           if(jComboBox2.getItemAt(k).contains(a)){
           p=1;
@@ -439,8 +441,8 @@ int k = checaFecha((int) jSpinner5.getValue(),(int) jSpinner4.getValue());
           break;
           }
           }
-             a = a.replaceAll("\\s","");
-            String number = "";
+             a = a.replaceAll("\\s",""); //separa numeros de letras
+            String number = "";  
                   String letter = "";
                   for (int i = 0; i < a.length(); i++) {
                          char b = a.charAt(i);
@@ -453,7 +455,7 @@ int k = checaFecha((int) jSpinner5.getValue(),(int) jSpinner4.getValue());
             int agregacion = (Integer.parseInt(number) + (int)jSpinner2.getNextValue()-1);
 
 
-            jComboBox2.addItem(letter +  " " + agregacion);
+            jComboBox2.addItem(letter +  " " + agregacion);  //esta es la parte donde se agregan los articulos de nuevo a las listas
             jComboBox1.addItem(letter +  " " + agregacion);    
         } catch (Exception e) {}
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -463,7 +465,7 @@ int k = checaFecha((int) jSpinner5.getValue(),(int) jSpinner4.getValue());
         int p=0;
         int l;
         try {
-                String a  = (String) jComboBox1.getSelectedItem();
+                String a  = (String) jComboBox1.getSelectedItem(); // se repite la logica del metodo arriba solo que este resta la cantidad de los articulos
                 for(int k=0; k<jComboBox1.getItemCount(); k++){
 
               if(jComboBox1.getItemAt(k).contains(a)){
@@ -473,7 +475,7 @@ int k = checaFecha((int) jSpinner5.getValue(),(int) jSpinner4.getValue());
               break;
               }
               }
-                a = a.replaceAll("\\s","");
+                a = a.replaceAll("\\s",""); // para separar las letras de los numeros
                 String number = "";
                       String letter = "";
                       for (int i = 0; i < a.length(); i++) {
@@ -495,13 +497,12 @@ int k = checaFecha((int) jSpinner5.getValue(),(int) jSpinner4.getValue());
                 }
 
                 if(restacion <=0){
-                restacion =0;
-               String texto=  jTextArea1.getText();
-               contents.add(letter);
+                    restacion =0;
+                    String texto=  jTextArea1.getText();
+                    contents.add(letter);
                if(texto.contains("El inventario está vacio!"))
                    texto ="";
-
-                   jTextArea1.setText(texto + "Compra mas " + letter +"\n");//+ " ve y compra mas, "+ letter+ " fue retirado del inventario" );
+                   jTextArea1.setText(texto + "Compra mas " + letter +"\n");
 
                 }
                 else if(restacion >0){
@@ -518,7 +519,7 @@ int k = checaFecha((int) jSpinner5.getValue(),(int) jSpinner4.getValue());
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         
        
-        System.exit(0);
+        System.exit(0);// para salir de la GUI
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -528,7 +529,7 @@ int k = checaFecha((int) jSpinner5.getValue(),(int) jSpinner4.getValue());
         System.out.println(contents.get(i));
         }
 
-        String file = ("/Users/Pablo/listadelsuper.txt");
+        String file = ("listadelsuper.txt");  //se guarda la lista del super (los articulos faltantes) en un archivo
         
         PrintWriter writer = null;
         try{
@@ -548,9 +549,9 @@ int k = checaFecha((int) jSpinner5.getValue(),(int) jSpinner4.getValue());
          
         writer.close();
         
-        if (Desktop.isDesktopSupported()) {
+        if (Desktop.isDesktopSupported()) { // para abrir el archivo automaticamente desde la ubicacion dada
     try {
-        File myFile = new File("/Users/Pablo/listadelsuper.txt");
+        File myFile = new File("listadelsuper.txt");
      
         Desktop.getDesktop().open(myFile);
        
@@ -563,9 +564,7 @@ int k = checaFecha((int) jSpinner5.getValue(),(int) jSpinner4.getValue());
    
 }
       
-        } catch (Exception e) {
-        
-    }
+        } catch (Exception e) {}
     
      
         
@@ -591,23 +590,27 @@ int k = checaFecha((int) jSpinner5.getValue(),(int) jSpinner4.getValue());
             new VentanaInventario().setVisible(true);
         });
     }
-     public int checaFecha(int dia, int mes){
+    
+     public int checaFecha(int dia, int mes){ //introducir dia y mes del articulo a checar caducidad
         int a = 0;
-    if((int)jSpinner6.getValue()<mes&&(int)jSpinner7.getValue()>dia)
+    if((int)jSpinner6.getValue()<(int)jSpinner4.getValue()&&(int)jSpinner7.getValue()>(int)jSpinner5.getValue())
     a= 1;//bueno
     
-    else if((int)jSpinner6.getValue()>(int)jSpinner4.getValue())
+    else if((int)jSpinner6.getValue()>(int)jSpinner7.getValue())
     a= 2;//caduco
      
     
-    else if((int)jSpinner6.getValue()==mes&&(int)jSpinner7.getValue()>dia)
-    a= 3;//caduco
+    else if((int)jSpinner6.getValue()==(int)jSpinner4.getValue()&&(int)jSpinner5.getValue()>(int)jSpinner7.getValue())
+    a= 3;//bueno
     
-    else if((int)jSpinner6.getValue()==mes&&(int)jSpinner7.getValue()-dia<7)
-    a=4;//bueno
+    else if((int)jSpinner6.getValue()==(int)jSpinner4.getValue()&&((int)jSpinner5.getValue()-(int)jSpinner7.getValue())<7&&((int)jSpinner5.getValue()-(int)jSpinner7.getValue())>0)
+    a=4;//bueno caduca esta semana
     
-    else if((int)jSpinner6.getValue()==mes&&(int)jSpinner7.getValue()-dia>7) //caduca esta semana
+    else if((int)jSpinner6.getValue()==(int)jSpinner4.getValue()&&((int)jSpinner5.getValue()-(int)jSpinner7.getValue())>7) 
     a=5;//bueno
+    
+    else if((int)jSpinner6.getValue()==(int)jSpinner4.getValue()&&(int)jSpinner5.getValue()<(int)jSpinner7.getValue())
+    return 6; //caduco
     
     return a;
     }

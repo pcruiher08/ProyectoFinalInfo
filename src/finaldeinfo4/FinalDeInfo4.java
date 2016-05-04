@@ -39,11 +39,14 @@ public class FinalDeInfo4{
 //        
 //       
         Inventario Pablo = new Inventario();
-             Pablo.addItem("tomates", 3);
-             Pablo.addItem("catsup", 2);
-             Pablo.addItem("2",2);
-             Pablo.addItem("2",2);
-             Pablo.addItem("2",2);
+//             Pablo.addItem("tomates", 3);
+//             Pablo.addItem("catsup", 2);
+//             Pablo.addItem("2",2);
+//             Pablo.addItem("2",2);
+//             Pablo.addItem("2",2);
+
+
+
            //  System.out.println(Pablo.numeroDeArticulos());
            //  System.out.println(Pablo.numeroDeArticulosEspecificos("tomates"));
 ////////////////////////////////////        ArrayList<String> Inventario = new ArrayList<String>();
